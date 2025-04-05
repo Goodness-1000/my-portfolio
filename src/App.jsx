@@ -5,7 +5,7 @@ import Works from './components/Works'
 const App = () => {
   return (
     <div className='relative bg-[#222831] '> 
-       <header className="md:flex flex-col justify-between h-[100px] items-center px-24 py-4">
+       <header className="flex justify-between h-[100px] items-center px-24 py-4">
         <h1 className='text-[#EEEEEE] font-bold'>GoodyWain-Design</h1>
         <div className="flex space-x-8">
           <h1 className='text-[#EEEEEE] text-sm font-normal'>Home</h1>
@@ -15,7 +15,7 @@ const App = () => {
         </header>
         {/* HERO */}
         
-        <div className="md:flex flex-col gap-8 h-screen items-center justify-center px-24">
+        <div className=" flex gap-8 h-screen items-center justify-center px-24">
         <img
             src="/arrow1.svg"
             className="   object-cover absolute left-10 top-"
