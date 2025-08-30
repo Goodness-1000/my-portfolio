@@ -4,7 +4,7 @@ function Button({ green,title }) {
   return (
     <button
       className={`${
-        green ? " bg-pink-400 text-[#EEEEE]" : "bg-[#393E46BF] text-white"
+        green ? " bg-pink-400 text-[#EEEEE]" : "bg-[#393E46BF] text-white hover:bg-pink-400 "
       } px-10 py-2 rounded-full font-medium text-s`}
     >
       {title}

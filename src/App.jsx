@@ -1,240 +1,140 @@
-import React from 'react'
-import Button from './components/Button'
-import Works from './components/Works'
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Button from "./components/Button";
+import Works from "./components/Works";
+
+// Import new pages
+import FrontendPage from "./pages/FrontendPage";
+import UIPage from "./pages/UIPage";
+import WebdevPage from "./pages/WebdevPage";
+import AllWorksPage from "./pages/AllWorksPage";
+import AboutPage from "./pages/AboutPage";
+import ContactPage from "./pages/ContactPage";
 
 const App = () => {
   return (
-    <div className='relative bg-[#222831] '> 
-       <header className="flex justify-between h-[100px] items-center px-24 py-4">
-        <h1 className='text-[#EEEEEE] font-bold'>GoodyWain-Design</h1>
-        <div className="flex space-x-8">
-          <h1 className='text-[#EEEEEE] text-sm font-normal'>Home</h1>
-          <h1 className='text-[#EEEEEE] text-sm font-normal'>About me</h1>
-          <h1 className='text-[#EEEEEE] text-sm font-normal'>Contact</h1>
-        </div>
+    <Router>
+      <div className="relative bg-[#222831] overflow-x-hidden">
+        {/* HEADER */}
+        <header className="flex flex-col md:flex-row justify-between items-center px-6 md:px-24 py-4">
+          <h1 className="text-[#EEEEEE] font-bold text-xl md:text-2xl mb-4 md:mb-0">
+            GoodyWain-Design
+          </h1>
+          <nav className="flex space-x-6 text-sm md:text-base">
+            <Link to="/" className="text-[#EEEEEE] hover:text-pink-400">Home</Link>
+            <Link to="/about" className="text-[#EEEEEE] hover:text-pink-400">About me</Link>
+            <Link to="/contact" className="text-[#EEEEEE] hover:text-pink-400">Contact</Link>
+          </nav>
         </header>
-        {/* HERO */}
-        
-        <div className=" flex gap-8 h-screen items-center justify-center px-24">
-        <img
-            src="/arrow1.svg"
-            className="   object-cover absolute left-10 top-"
-            alt="arrowimage"
-          />
-          <div className='w[60%] -mt-32 flex flex-col items-start justify-center space-y-4'>
-            <h1 className='text-7xl  text-white font-bold'>Creative Frontend
-               <span className='text-pink-400'>developer</span>
-              </h1>
-              <div className="space-x-4 flex items-center pt-24">
-            <Button title="Hire me"  green/>
-            <Button title="Download cv"/>
-          </div>
-         
-          </div>
-          <div className="w-[60%] flex items-center justify-center relative ">
-          <img
-            src="/bgimage1.svg"
-            className="   object-cover absolute -right-2"
-            alt="heroimage"
-          />
-          <img
-            src="/image1bottom.svg"
-            className="   object-cover absolute top-[280px] right-40"
-            alt="heroimage"
-          />
-          <img
-            src="/image1.svg"
-            className="pt-80  object-cover absolute right-24"
-            alt="heroimage"
-          />
-           
-        </div>
-        <div className='mt-[550px]'>
-          <img
-            src="/arrowdown.svg"
-            className=" w-[5%]  object-cover absolute left-[450px]"
-            alt="arrowdown"
-          />
-          </div>
-        </div>
-         {/*section2 About me*/} 
-       <div className="flex h-screen items-center justify-center px-24 mt-32 mb-56 ">
-        <div className="w-[50%]  flex flex-col items-start space-y-4 relative">
-        <img
-            src="/music2.svg"
-            className="w-[7%]   object-cover absolute right-70 -top-10"
-            alt="heroimage2"
-          />
-           <img
-            src="/lightbulb.svg"
-            className="w-[10%]   object-cover absolute right-48 top-0"
-            alt="heroimage2"
-          />
-           <img
-            src="/arrow2.svg"
-            className="w-[20%]   object-cover absolute right-48 top-80"
-            alt="heroimage2"
-          />
-        <h2 className='text-7xl  text-white font-bold'>About 
-           <span className='text-pink-400'>me</span></h2>
-        <p className='text-white text-md w-[75%]'>As a passionate and skilled software
-           engineer, I specialize in developing efficient, scalable, and user-friendly
-            applications. With expertise in front-end technologies like HTML, CSS, 
-            JavaScript, and frameworks such as React.js, I create intuitive web 
-            experiences that enhance usability and performance. My strong problem-solving
-             abilities, commitment to clean code, and knowledge of best development 
-             practices allow me to contribute effectively to any team. I am always eager
-              to learn new technologies, optimize workflows, and collaborate with 
-              cross-functional teams to build innovative software solutions that drive 
-              success. 
-          <b>Read more</b></p>
-        </div>
-        <div className="w-[50%] top-24 flex items-center justify-center relative">
-        <img
-            src="/bgimage2.svg"
-            className="w-[100%]   object-cover absolute right-0"
-            alt="heroimage2"
-          />
-          <img
-            src="/image1bottom.svg"
-            className="w-[60%]   object-cover absolute right-32 top-72"
-            alt="heroimage"
-          />
-          <img
-            src="/image2.svg"
-            className="w-[60%]   object-cover absolute right-32 top-2"
-            alt="heroimage"
-          />
-        </div>
-        </div> 
-        {/*section3*/} 
-        <div className="flex h-screen items-center justify-center mb-24 px-24 ">
-           <img
-            src="/section3bg.svg"
-            className="w-[100%] h-[100vh]   object-cover absolute  mt-[50px]"
-            alt="heroimage"
-            
-          />
-         <div className='absolute flex left-24 -mt-64'>
-         <h2 className='text-7xl  text-white font-bold'>My Recent 
-         <span className='text-pink-400'>Works</span></h2>
-         <div className="space-x-4 flex pt-24 absolute">
-            <Button title="All"  green/>
-            <Button title="Front-end"/>
-            <Button title="UI"/>
-            <Button title="Web-design"/>
-          </div>
-          <div className='absolute flex top-48 space-x-8'>
-            <Works img={"/course-3.svg"}/>
-            <Works img={"/course-2.svg"}/>
-            <Works img={"/course-1.svg"}/>
-          </div>
-         </div>
-         </div> 
-         {/*section4*/}
-          <div className="flex pb-8 gap-8  h-screen items-center justify-center px-24">
-          
-          <div className='w[50%] items-start justify-center left-0'>
-            <h1 className='text-7xl  text-white font-bold'>Got a project in<br/>
-               <span className='text-pink-400'>mind?</span>
-              </h1>
-             <div className='flex'>
-          <img
-            src='/section4arrow.svg'
-            className='-pl-8 pt-8'
-            alt='arrowdown'
-          />
-           <img
-            src="/climbing.svg"
-            className="w-[28vw] pl-40 object-cover absolute"
-            alt="climbing image"
-            />
-            <img
-            src="/shadow4.svg"
-            className="w-[22vw] pl-40 pt-[297px] object-cover absolute"
-            alt="climbing image"
-            />
-            </div>
-              </div>
-           <div className='form'>
-           <img
-          src='/keyboard.svg'
-          className='  pb-8 '
-          />
-           <div className='flex gap-4 pb-8'>
+
+        {/* ROUTES */}
+        <Routes>
+          {/* HOME PAGE */}
+          <Route path="/" element={
             <div>
-            <h3 className='text-white text-2xl'>your name</h3>
-            <input className='bg-[#393E4680] text-white rounded-md py-2 px-2' type='text' placeholder='Name'></input>
-            </div>
-           <div>
-           <h3 className='text-white text-2xl'>your email</h3>
-           <input className='bg-[#393E4680] text-white rounded-md py-2 px-2' type='text' placeholder='Name'></input>
-           </div>
-           
-           </div>
-           <h3 className='text-white text-2xl'>Your message</h3>
-            <input className='bg-[#393E4680] text-white rounded-md h-[200px] w-[420px]' type='text' placeholder='message'></input>
-           <div className='pt-8'>
-           <Button title='Send messege' green/>
-           </div>
-           <div className='pl-96 '> 
-            <img
-              src='/mail4.svg'
-              alt='mailimage'
-            />
-            </div>
+              {/* HERO */}
+              <section className="flex flex-col-reverse lg:flex-row gap-8 items-center justify-between px-6 md:px-24 py-12">
+                {/* Left Text */}
+                <div className="w-full lg:w-1/2 flex flex-col space-y-6 text-center lg:text-left">
+                  <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
+                    Creative Frontend <span className="text-pink-400">Developer</span>
+                  </h1>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-6">
+                    {/* Hire me scrolls to Contact */}
+                    <Link to="/contact">
+                      <Button title="Hire me" green />
+                    </Link>
+                    {/* Download CV links to a file */}
+                    <a href="/GoodnessWainoCV.pdf" download>
+                      <Button title="Download CV" />
+                    </a>
+                  </div>
+                </div>
 
-            </div> 
-            
-          
-              </div>
-    <hr/>
-    {/*footer*/}
-    <div  className="flex-col gap-16 h-[50vh] items-center justify-center px-24">
-         <div className='flex gap-16 justify-center pt-32'>
-         <div className='text-white flex'>
-          <img
-            src='/home.svg'
-            />Home
-          
-          </div>
-          <div className='text-white flex'>
-          <img
-            src='/user.svg'
-            />About me
-          
-          </div>
+                {/* Right Images */}
+                <div className="w-full lg:w-1/2 relative flex justify-center">
+                  <img src="/bgimage1.svg" className="w-[80%] max-w-sm md:max-w-md" alt="Background decorative pattern" />
+                  <img src="/image1bottom.svg" className="absolute bottom-0 right-10 w-1/3" alt="Decorative bottom shape" />
+                  <img src="/image1.svg" className="absolute bottom-10 right-6 w-1/2" alt="Portrait of developer" />
+                </div>
+              </section>
 
-          <div className='text-white flex'>
-          <img
-            src='/call.svg'
-            />Contact
-          
+              {/* ABOUT */}
+              <section className="flex flex-col lg:flex-row items-center justify-between px-6 md:px-24 py-16 gap-12">
+                <div className="w-full lg:w-1/2 flex flex-col space-y-6 relative">
+                  <h2 className="text-4xl md:text-6xl font-bold text-white">
+                    About <span className="text-pink-400">me</span>
+                  </h2>
+                  <p className="text-white text-base leading-relaxed">
+                    As a passionate and skilled software engineer, I specialize in developing efficient,
+                    scalable, and user-friendly applications. With expertise in front-end technologies like
+                    HTML, CSS, JavaScript, and frameworks such as React.js, I create intuitive web
+                    experiences that enhance usability and performance...
+                  </p>
+                  {/* Read More button */}
+                  <Link to="/about">
+                    <Button title="Read More" />
+                  </Link>
+                </div>
+
+                <div className="w-full lg:w-1/2 flex justify-center relative">
+                  <img src="/bgimage2.svg" className="w-[80%] max-w-md" alt="About section background" />
+                  <img src="/image2.svg" className="absolute top-4 w-[50%]" alt="Developer working illustration" />
+                </div>
+              </section>
+
+              {/* WORKS */}
+              <section id="works" className="relative flex flex-col items-center justify-center px-6 md:px-24 py-20">
+                <h2 className="text-4xl md:text-6xl font-bold text-white text-center mb-8">
+                  My Recent <span className="text-pink-400">Works</span>
+                </h2>
+
+                <div className="flex flex-wrap gap-4 justify-center mb-12">
+                  <Link to="/works/all"><Button title="All" green /></Link>
+                  <Link to="/works/frontend"><Button title="Front-end" /></Link>
+                  <Link to="/works/ui"><Button title="UI" /></Link>
+                  <Link to="/works/webdev"><Button title="Web-dev" /></Link>
+                </div>
+
+                <div className="flex flex-wrap gap-6 justify-center">
+                  <Works img="/course-3.svg" />
+                  <Works img="/course-2.svg" />
+                  <Works img="/course-1.svg" />
+                </div>
+              </section>
+            </div>
+          } />
+
+          {/* OTHER PAGES */}
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+
+          <Route path="/works/all" element={<AllWorksPage />} />
+          <Route path="/works/frontend" element={<FrontendPage />} />
+          <Route path="/works/ui" element={<UIPage />} />
+          <Route path="/works/webdev" element={<WebdevPage />} />
+        </Routes>
+
+        {/* FOOTER */}
+        <footer className="flex-col gap-16 h-[50vh] items-center justify-center px-24">
+          <div className='flex gap-16 justify-center pt-32'>
+            <Link to="/" className='text-white flex'><img src='/home.svg' alt="" />Home</Link>
+            <Link to="/about" className='text-white flex'><img src='/user.svg' alt="" />About me</Link>
+            <Link to="/contact" className='text-white flex'><img src='/call.svg' alt="" />Contact</Link>
           </div>
-         </div>
           <div className='flex gap-8 justify-center pt-16'>
-            <img
-              src='/facebook.svg'
-            />
-            <img
-              src='/instagram.svg'
-            />
-            <img
-              src='/twitter.svg'
-            />
-            <img
-              src='/youtube.svg'
-            />
-            
+            <img src='/facebook.svg' alt="Facebook" />
+            <img src='/instagram.svg' alt="Instagram" />
+            <img src='/twitter.svg' alt="Twitter" />
+            <img src='/youtube.svg' alt="YouTube" />
           </div>
           <div className='float-right pt-8'>
-          <p className='text-sm text-white '>Terms of service-Privacy policy</p> 
+            <p className='text-sm text-white '>Terms of service - Privacy policy</p>
           </div>
-          
-    </div>
-         
-    </div>
-  )
-}
+        </footer>
+      </div>
+    </Router>
+  );
+};
 
-export default App
+export default App;
