@@ -52,7 +52,7 @@ const App = () => {
                 {/* Right Images */}
                 <div className="w-full lg:w-1/2 relative flex justify-center">
                   <img src="/bgimage1.svg" className="w-[80%] max-w-sm md:max-w-md" alt="Background decorative pattern" />
-                  <img src="/image1bottom.svg" className="absolute bottom-0 right-10 w-1/3" alt="Decorative bottom shape" />
+                  <img src="/image1bottom.svg" className="absolute bottom-[90px] right-10 w-[20vw]" alt="Decorative bottom shape" />
                   <img src="/image1.svg" className="absolute bottom-10 right-6 w-1/2" alt="Portrait of developer" />
                 </div>
               </section>
