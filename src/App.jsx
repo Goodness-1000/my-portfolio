@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Button from "./components/Button";
 import Works from "./components/Works";
 
-// Import new pages
+// Import pages
 import FrontendPage from "./pages/FrontendPage";
 import UIPage from "./pages/UIPage";
 import WebdevPage from "./pages/WebdevPage";
@@ -29,10 +29,10 @@ const App = () => {
 
         {/* ROUTES */}
         <Routes>
-          {/* HOME PAGE */}
+          {/* HOME */}
           <Route path="/" element={
             <div>
-              {/* HERO */}
+              {/* HERO SECTION */}
               <section className="flex flex-col-reverse lg:flex-row gap-8 items-center justify-between px-6 md:px-24 py-12">
                 {/* Left Text */}
                 <div className="w-full lg:w-1/2 flex flex-col space-y-6 text-center lg:text-left">
@@ -40,11 +40,9 @@ const App = () => {
                     Creative Frontend <span className="text-pink-400">Developer</span>
                   </h1>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-6">
-                    {/* Hire me scrolls to Contact */}
-                    <Link to="/contact">
+                    <a href="#contact">
                       <Button title="Hire me" green />
-                    </Link>
-                    {/* Download CV links to a file */}
+                    </a>
                     <a href="/GoodnessWainoCV.pdf" download>
                       <Button title="Download CV" />
                     </a>
@@ -59,7 +57,7 @@ const App = () => {
                 </div>
               </section>
 
-              {/* ABOUT */}
+              {/* ABOUT PREVIEW */}
               <section className="flex flex-col lg:flex-row items-center justify-between px-6 md:px-24 py-16 gap-12">
                 <div className="w-full lg:w-1/2 flex flex-col space-y-6 relative">
                   <h2 className="text-4xl md:text-6xl font-bold text-white">
@@ -67,16 +65,12 @@ const App = () => {
                   </h2>
                   <p className="text-white text-base leading-relaxed">
                     As a passionate and skilled software engineer, I specialize in developing efficient,
-                    scalable, and user-friendly applications. With expertise in front-end technologies like
-                    HTML, CSS, JavaScript, and frameworks such as React.js, I create intuitive web
-                    experiences that enhance usability and performance...
+                    scalable, and user-friendly applications...
                   </p>
-                  {/* Read More button */}
                   <Link to="/about">
                     <Button title="Read More" />
                   </Link>
                 </div>
-
                 <div className="w-full lg:w-1/2 flex justify-center relative">
                   <img src="/bgimage2.svg" className="w-[80%] max-w-md" alt="About section background" />
                   <img src="/image2.svg" className="absolute top-4 w-[50%]" alt="Developer working illustration" />
@@ -105,10 +99,13 @@ const App = () => {
             </div>
           } />
 
-          {/* OTHER PAGES */}
+          {/* ABOUT PAGE */}
           <Route path="/about" element={<AboutPage />} />
+
+          {/* CONTACT PAGE */}
           <Route path="/contact" element={<ContactPage />} />
 
+          {/* WORKS PAGES */}
           <Route path="/works/all" element={<AllWorksPage />} />
           <Route path="/works/frontend" element={<FrontendPage />} />
           <Route path="/works/ui" element={<UIPage />} />
@@ -116,20 +113,26 @@ const App = () => {
         </Routes>
 
         {/* FOOTER */}
-        <footer className="flex-col gap-16 h-[50vh] items-center justify-center px-24">
-          <div className='flex gap-16 justify-center pt-32'>
-            <Link to="/" className='text-white flex'><img src='/home.svg' alt="" />Home</Link>
-            <Link to="/about" className='text-white flex'><img src='/user.svg' alt="" />About me</Link>
-            <Link to="/contact" className='text-white flex'><img src='/call.svg' alt="" />Contact</Link>
-          </div>
-          <div className='flex gap-8 justify-center pt-16'>
-            <img src='/facebook.svg' alt="Facebook" />
-            <img src='/instagram.svg' alt="Instagram" />
-            <img src='/twitter.svg' alt="Twitter" />
-            <img src='/youtube.svg' alt="YouTube" />
-          </div>
-          <div className='float-right pt-8'>
-            <p className='text-sm text-white '>Terms of service - Privacy policy</p>
+        <footer className="bg-[#1a1f24] py-12">
+          <div className="flex flex-col items-center space-y-6">
+            <div className="flex gap-8 text-white">
+              <Link to="/" className="flex items-center gap-2 hover:text-pink-400">
+                <img src="/home.svg" alt="home" /> Home
+              </Link>
+              <Link to="/about" className="flex items-center gap-2 hover:text-pink-400">
+                <img src="/user.svg" alt="about" /> About me
+              </Link>
+              <Link to="/contact" className="flex items-center gap-2 hover:text-pink-400">
+                <img src="/call.svg" alt="contact" /> Contact
+              </Link>
+            </div>
+            <div className="flex gap-6">
+              <img src="/facebook.svg" alt="fb" />
+              <img src="/instagram.svg" alt="ig" />
+              <img src="/twitter.svg" alt="twitter" />
+              <img src="/youtube.svg" alt="yt" />
+            </div>
+            <p className="text-white text-sm">Terms of service · Privacy policy</p>
           </div>
         </footer>
       </div>
