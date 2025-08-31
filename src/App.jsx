@@ -7,7 +7,7 @@ import Works from "./components/Works";
 import FrontendPage from "./pages/FrontendPage";
 import UIPage from "./pages/UIPage";
 import WebdevPage from "./pages/WebdevPage";
-import AllWorksPage from "./pages/AllWorksPage"
+import AllworksPage from "./pages/AllworksPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 
@@ -106,7 +106,7 @@ const App = () => {
           <Route path="/contact" element={<ContactPage />} />
 
           {/* WORKS PAGES */}
-         <Route path="/works/all" element={<AllWorksPage />} />
+         <Route path="/works/all" element={<AllworksPage />} />
           <Route path="/works/frontend" element={<FrontendPage />} />
           <Route path="/works/ui" element={<UIPage />} />
           <Route path="/works/webdev" element={<WebdevPage />} />
