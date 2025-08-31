@@ -7,7 +7,7 @@ import Works from "./components/Works";
 import FrontendPage from "./pages/FrontendPage";
 import UIPage from "./pages/UIPage";
 import WebdevPage from "./pages/WebdevPage";
-import AllWorksPage from "./pages/AllWorksPage";
+import AllWorksPage from "./pages/AllWorksPage"
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 
