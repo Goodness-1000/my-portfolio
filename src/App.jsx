@@ -106,7 +106,7 @@ const App = () => {
           <Route path="/contact" element={<ContactPage />} />
 
           {/* WORKS PAGES */}
-          <Route path="/works/all" element={<AllWorksPage />} />
+         <Route path="/works/all" element={<AllWorksPage />} />
           <Route path="/works/frontend" element={<FrontendPage />} />
           <Route path="/works/ui" element={<UIPage />} />
           <Route path="/works/webdev" element={<WebdevPage />} />
