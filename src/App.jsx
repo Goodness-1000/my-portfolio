@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { Typewriter } from "react-simple-typewriter";
 import Button from "./components/Button";
 import Works from "./components/Works";
 
@@ -14,7 +15,7 @@ import ContactPage from "./pages/ContactPage";
 const App = () => {
   return (
     <Router>
-      <div className="relative bg-[#222831] overflow-x-hidden">
+      <div className="relative bg-[#142a4b] overflow-x-hidden">
         {/* HEADER */}
         <header className="flex flex-col md:flex-row justify-between items-center px-6 md:px-24 py-4">
           <h1 className="text-[#EEEEEE] font-bold text-xl md:text-2xl mb-4 md:mb-0">
@@ -36,8 +37,18 @@ const App = () => {
               <section className="flex flex-col-reverse lg:flex-row gap-8 items-center justify-between px-6 md:px-24 py-12">
                 {/* Left Text */}
                 <div className="w-full lg:w-1/2 flex flex-col space-y-6 text-center lg:text-left">
-                  <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
-                    Creative Frontend <span className="text-pink-400">Developer</span>
+                  <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold text-white leading-tight">
+                    A Creative <span className="text-pink-400">
+                      <Typewriter
+                        words={["Developer", "Designer", "Disciple", "AI Engr"]}
+                        loop={true}
+                        cursor
+                        cursorStyle="_"
+                        typeSpeed={60}
+                        deleteSpeed={60}
+                        delaySpeed={1500}
+                      />
+                    </span>
                   </h1>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-6">
                     <a href="#contact">
@@ -74,6 +85,7 @@ const App = () => {
                 <div className="w-full lg:w-1/2 flex justify-center relative">
                   <img src="/bgimage2.svg" className="w-[80%] max-w-md" alt="About section background" />
                   <img src="/image2.svg" className="absolute top-4 w-[50%]" alt="Developer working illustration" />
+                  <img src="/image1bottom.svg" className="absolute bottom-[60px] left-32 w-[20vw]" alt="Decorative bottom shape" />
                 </div>
               </section>
 
@@ -106,7 +118,7 @@ const App = () => {
           <Route path="/contact" element={<ContactPage />} />
 
           {/* WORKS PAGES */}
-         <Route path="/works/all" element={<AllworksPage />} />
+          <Route path="/works/all" element={<AllworksPage />} />
           <Route path="/works/frontend" element={<FrontendPage />} />
           <Route path="/works/ui" element={<UIPage />} />
           <Route path="/works/webdev" element={<WebdevPage />} />
